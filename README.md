@@ -18,9 +18,12 @@ By default both commands will be executed on the Staging environment, if you wan
 Example:
 
 gradle test aggregate -Denvironment=dev
+
+
 Accepted values:
 
 dev = Development environment
+
 prod = Production environment
-    Get Execution Reports
-Open the index.htm file located on target/site/serenity directory.
+
+Get Execution Reports open the index.htm file located on target/site/serenity directory.
