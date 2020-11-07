@@ -36,8 +36,10 @@ phases:
   post_test:
     commands:
       - echo "export serenity report"
-      - mkdir reports
-      - cp -R target/site reports
+      - export DATE="$( date +%d-%b-%y--%a:%T )"
+      - mkdir $DATE
+      - cd ..
+      - cp -R target/site reports/$DATE
 
   artifacts:
-    - $reports
+    - reports/$DATE
