@@ -1,0 +1,20 @@
+version: '1'
+
+pipeline:
+  test:
+    systemProperties:
+      prop3: 'THREE'
+
+  stacks:
+
+    - stack: 'dev'
+      test:
+        systemProperties:
+          prop3: 'THREE-DEV'
+          propEnv: 'development'
+
+    - stack: 'pro'
+      test:
+        systemProperties:
+          prop3: 'THREE-PROD'
+          propEnv: 'production'
