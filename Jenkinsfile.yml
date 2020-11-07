@@ -18,3 +18,28 @@ pipeline:
         systemProperties:
           prop3: 'THREE-PROD'
           propEnv: 'production'
+phases:
+
+  install:
+    commands:
+      - echo "Navigate to test package directory"
+
+  pre_test:
+    commands:
+      - echo "Start test server"
+
+  test:
+    commands:
+      - echo "Run Tests"
+      - gradle test -Denvironment=dev
+
+  post_test:
+    commands:
+      - echo "export serenity report"
+      - export DATE="$( date +%d-%b-%y--%a:%T )"
+      - mkdir $DATE
+      - cd ..
+      - cp -R target/site reports/$DATE
+
+  artifacts:
+    - reports/$DATE
