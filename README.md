@@ -27,3 +27,5 @@ dev = Development environment
 prod = Production environment
 
 Get Execution Reports open the index.htm file located on target/site/serenity directory.
+
+pipeline configuration jenkins
